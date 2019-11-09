@@ -1,0 +1,27 @@
+{
+    "manifest_version": 2,
+
+    "name": "Seizure Freezer",
+    "description": "Analyze video to detect seizure inducing footage before it plays.",
+    "version": "0.1",
+
+    "permissions": [
+        "tabs","<all_urls>"
+    
+    ],
+    "browser_action": {
+        "default_icon": "icon.png"
+    },
+
+    "content_scripts": [
+        {
+        "matches": [
+            "http://*/*",
+            "https://*/*"
+            ],
+        "js": ["content.js"],
+        "run_at": "document_end"
+        }
+    ]
+    
+}
